@@ -2,10 +2,12 @@ package com.example.myfirstapp;
 
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -59,10 +61,13 @@ public class MainActivity extends AppCompatActivity {
         EditText typeText = (EditText) findViewById(R.id.typeText);
         String message = messageText.getText().toString();
         String type = typeText.getText().toString();
-        out.print(typeText);
-        out.flush();
-        out.print(messageText);
-        out.flush();
+        //out.print(typeText);
+        //out.flush();
+        //out.print(messageText);
+        //out.flush();
+        ImageView imgView=(ImageView) findViewById(R.id.screenImage);
+        Drawable drawable  = getResources().getDrawable(R.mipmap.ic_launcher_round);
+        imgView.setImageDrawable(drawable);
 
     }
 
