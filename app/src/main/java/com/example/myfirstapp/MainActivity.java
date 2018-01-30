@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
                             true);
                     in = new BufferedReader(new InputStreamReader(
                             socket.getInputStream()));
-                    out.print("1");
-                    out.flush();
-                    out.print(("1000,1000" + new String(new char[260]).replace('\0','-')).substring(0,260));
-                    out.flush();
 
                 }
                 catch  (Exception e) {
@@ -61,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
         EditText typeText = (EditText) findViewById(R.id.typeText);
         String message = messageText.getText().toString();
         String type = typeText.getText().toString();
-        //out.print(typeText);
-        //out.flush();
-        //out.print(messageText);
-        //out.flush();
-        ImageView imgView=(ImageView) findViewById(R.id.screenImage);
-        Drawable drawable  = getResources().getDrawable(R.mipmap.ic_launcher_round);
-        imgView.setImageDrawable(drawable);
+        if(out != null) {
+            out.print(type + message);
+            out.flush();
+        }
+        Intent intent = new Intent(this, Screen.class);
+        startActivity(intent);
+
 
     }
 
