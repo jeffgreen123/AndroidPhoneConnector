@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("No I/O");
                     System.exit(1);
                 }
-                //Your code goes here
+
             }
         });
 
         thread.start();
-        //Create socket connection
+
 
 
 
