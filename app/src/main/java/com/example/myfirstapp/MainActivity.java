@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
         EditText typeText = (EditText) findViewById(R.id.typeText);
         String message = messageText.getText().toString();
         String type = typeText.getText().toString();
-
+        out.print(typeText);
+        out.flush();
+        out.print(messageText);
+        out.flush();
 
     }
 
